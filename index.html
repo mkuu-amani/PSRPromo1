@@ -3,41 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Where The Mix Never Sleeps!! Listen live on Prodigal Sun Radio.">
+    <link rel="canonical" href="https://mkuu-amani.github.io/PSRPromo1/">
 
     <title>Prodigal Sun Radio — Where The Mix Never Sleeps!!</title>
 
     <!-- Facebook / Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url"
-          content="https://mkuu-amani.github.io/PSRPromo1/">
-    <meta property="og:title"
-          content="Prodigal Sun Radio">
-    <meta property="og:description"
-          content="Where The Mix Never Sleeps!!">
-    <meta property="og:image"
-          content="https://mkuu-amani.github.io/PSRPromo1/Screenshot%202026-09-12%20at%2020.59.49.png">
-    <meta property="og:image:alt"
-          content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+    <meta property="og:site_name" content="Prodigal Sun Radio">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://mkuu-amani.github.io/PSRPromo1/">
+    <meta property="og:title" content="Prodigal Sun Radio">
+    <meta property="og:description" content="Where The Mix Never Sleeps!!">
+    <meta property="og:image" content="https://mkuu-amani.github.io/PSRPromo1/og-card.jpg">
+    <meta property="og:image:secure_url" content="https://mkuu-amani.github.io/PSRPromo1/og-card.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
 
     <!-- X / Twitter -->
-    <meta name="twitter:card"
-          content="summary_large_image">
-    <meta name="twitter:title"
-          content="Prodigal Sun Radio">
-    <meta name="twitter:description"
-          content="Where The Mix Never Sleeps!!">
-    <meta name="twitter:image"
-          content="https://mkuu-amani.github.io/PSRPromo1/Screenshot%202026-09-12%20at%2020.59.49.png">
-    <meta name="twitter:image:alt"
-          content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mkuu-amani.github.io/PSRPromo1/">
+    <meta name="twitter:title" content="Prodigal Sun Radio">
+    <meta name="twitter:description" content="Where The Mix Never Sleeps!!">
+    <meta name="twitter:image" content="https://mkuu-amani.github.io/PSRPromo1/og-card.jpg">
+    <meta name="twitter:image:alt" content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+
+    <link rel="preload" as="image" href="promo.jpg">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
-        html,
-        body {
+        html, body {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -47,12 +46,17 @@
 
         body {
             overflow: hidden;
+            font-family: system-ui, -apple-system, sans-serif;
         }
 
         .promo-link {
             display: block;
             width: 100%;
             height: 100%;
+            height: 100dvh;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
 
         .promo-image {
@@ -61,23 +65,41 @@
             height: 100%;
             object-fit: contain;
             object-position: center;
+            background: #000;
+            -webkit-user-drag: none;
+            user-select: none;
+        }
+
+        .visit-hint {
+            position: fixed;
+            left: 50%;
+            bottom: 1.25rem;
+            transform: translateX(-50%);
+            padding: 0.55rem 1rem;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #f5d76e;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            pointer-events: none;
+            backdrop-filter: blur(6px);
         }
     </style>
 </head>
-
 <body>
-
     <a
         class="promo-link"
-        href="https://prodigalsunradio.com"
+        href="https://www.prodigalsunradio.com/"
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit Prodigal Sun Radio"
     >
         <img
             class="promo-image"
-            src="Screenshot%202026-09-12%20at%2020.59.49.png"
+            src="promo.jpg"
             alt="Prodigal Sun Radio — Where The Mix Never Sleeps!!"
         >
     </a>
-
+    <div class="visit-hint">Tap to listen live</div>
 </body>
 </html>
