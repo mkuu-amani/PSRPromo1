@@ -58,6 +58,13 @@
             color: inherit;
         }
 
+        .stage {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
         .promo-image {
             display: block;
             width: 100%;
@@ -65,8 +72,50 @@
             object-fit: contain;
             object-position: center center;
             background: #000;
+            transform-origin: center 42%;
+            animation: kenburns 28s ease-in-out infinite alternate;
             -webkit-user-drag: none;
             user-select: none;
+            pointer-events: none;
+        }
+
+        .sun-glow {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 50% 38%, rgba(255, 196, 70, 0.28) 0%, rgba(255, 140, 0, 0.08) 28%, transparent 55%);
+            mix-blend-mode: screen;
+            animation: pulse 6s ease-in-out infinite;
+        }
+
+        .heat {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(180deg, rgba(255, 170, 40, 0.08), transparent 35%, rgba(0, 0, 0, 0.18));
+            mix-blend-mode: soft-light;
+            animation: shimmer 9s ease-in-out infinite;
+        }
+
+        .embers {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .ember {
+            position: absolute;
+            bottom: -8px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #ffd36a;
+            box-shadow: 0 0 8px 3px rgba(255, 180, 40, 0.65);
+            opacity: 0;
+            animation: rise linear infinite;
         }
 
         .visit-hint {
@@ -83,6 +132,33 @@
             pointer-events: none;
             backdrop-filter: blur(6px);
         }
+
+        @keyframes kenburns {
+            from { transform: scale(1) translate3d(0, 8px, 0); }
+            to   { transform: scale(1.08) translate3d(0, -12px, 0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.55; }
+            50%      { opacity: 1; }
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.45; }
+            50%      { opacity: 0.85; }
+        }
+
+        @keyframes rise {
+            0%   { transform: translate3d(0, 0, 0) scale(0.6); opacity: 0; }
+            12%  { opacity: 0.9; }
+            100% { transform: translate3d(var(--drift), -110vh, 0) scale(0.2); opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .promo-image, .sun-glow, .heat, .ember {
+                animation: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -93,12 +169,33 @@
         rel="noopener noreferrer"
         aria-label="Visit Prodigal Sun Radio"
     >
-        <img
-            class="promo-image"
-            src="promo.jpg"
-            alt="Prodigal Sun Radio — Where The Mix Never Sleeps!!"
-        >
+        <div class="stage">
+            <img
+                class="promo-image"
+                src="promo.jpg"
+                alt="Prodigal Sun Radio — Where The Mix Never Sleeps!!"
+            >
+            <div class="sun-glow"></div>
+            <div class="heat"></div>
+            <div class="embers" id="embers"></div>
+        </div>
     </a>
     <div class="visit-hint">Tap to listen live</div>
+
+    <script>
+        const layer = document.getElementById('embers');
+        const count = 22;
+
+        for (let i = 0; i < count; i += 1) {
+            const spark = document.createElement('span');
+            spark.className = 'ember';
+            spark.style.left = Math.random() * 100 + '%';
+            spark.style.setProperty('--drift', (Math.random() * 80 - 40) + 'px');
+            spark.style.animationDuration = (7 + Math.random() * 8) + 's';
+            spark.style.animationDelay = (-Math.random() * 12) + 's';
+            spark.style.width = spark.style.height = (2 + Math.random() * 5) + 'px';
+            layer.appendChild(spark);
+        }
+    </script>
 </body>
 </html>
