@@ -1,48 +1,193 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Prodigal Sun Radio</title>
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="Prodigal Sun Radio">
-    <meta property="og:description" content="Where The Mix Never Sleeps!!">
-    <meta property="og:image" content="https://static.wixstatic.com/media/4657a4_f15be12a849544fdbe0b03cd9eba8f1f~mv2.png">
+<title>Prodigal Sun Radio — Where The Mix Never Sleeps!!</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<meta name="description"
+      content="Prodigal Sun Radio — Independent. Community-driven. Ad-free. Where The Mix Never Sleeps!!">
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
+
+<!-- ============================= -->
+<!-- OPEN GRAPH SOCIAL PREVIEW     -->
+<!-- ============================= -->
+
+<meta property="og:type" content="website">
+
+<meta property="og:url"
+      content="https://mkuu-amani.github.io/PSRPromo1/">
+
+<meta property="og:title"
+      content="Prodigal Sun Radio">
+
+<meta property="og:description"
+      content="Where The Mix Never Sleeps!!">
+
+<meta property="og:image"
+      content="https://static.wixstatic.com/media/4657a4_f15be12a849544fdbe0b03cd9eba8f1f~mv2.png">
+
+<meta property="og:image:alt"
+      content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+
+
+<!-- ============================= -->
+<!-- X / TWITTER SOCIAL PREVIEW    -->
+<!-- ============================= -->
+
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="Prodigal Sun Radio">
+
+<meta name="twitter:description"
+      content="Where The Mix Never Sleeps!!">
+
+<meta name="twitter:image"
+      content="https://static.wixstatic.com/media/4657a4_f15be12a849544fdbe0b03cd9eba8f1f~mv2.png">
+
+<meta name="twitter:image:alt"
+      content="Prodigal Sun Radio — Where The Mix Never Sleeps!!">
+
+
+<!-- ============================= -->
+<!-- PAGE STYLING                  -->
+<!-- ============================= -->
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        background: #000;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        overflow: hidden;
+    }
+
+
+    /* THE ENTIRE IMAGE IS CLICKABLE */
+
+    .image-link {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+    /* RESPONSIVE IMAGE */
+
+    .promo-image {
+        display: block;
+
+        width: auto;
+        height: auto;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain;
+    }
+
+
+    /* MOBILE / PORTRAIT */
+
+    @media (max-aspect-ratio: 1/1) {
+
+        .promo-image {
             width: 100%;
-            height: 100%;
-            overflow: hidden;
+            height: auto;
+
+            max-width: 100%;
+            max-height: 100dvh;
+
+            object-fit: contain;
         }
 
-        body {
-            background-image: url("https://static.wixstatic.com/media/4657a4_f15be12a849544fdbe0b03cd9eba8f1f~mv2.png");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            cursor: pointer;
+    }
+
+
+    /* DESKTOP / LANDSCAPE */
+
+    @media (min-aspect-ratio: 1/1) {
+
+        .promo-image {
+            width: auto;
+            height: 100dvh;
+
+            max-width: 100%;
+            max-height: 100dvh;
+
+            object-fit: contain;
         }
 
-        a {
-            display: block;
+    }
+
+
+    /* SMALL PHONES */
+
+    @media (max-width: 480px) {
+
+        .promo-image {
             width: 100%;
-            height: 100%;
+            height: auto;
+
+            max-height: 100dvh;
         }
-    </style>
+
+    }
+
+</style>
+```
+
 </head>
 
 <body>
 
-    <a href="https://prodigalsunradio.com" aria-label="Visit Prodigal Sun Radio"></a>
+```
+<a
+    class="image-link"
+    href="https://prodigalsunradio.com"
+    aria-label="Visit Prodigal Sun Radio"
+>
+
+    <img
+        class="promo-image"
+        src="https://static.wixstatic.com/media/4657a4_f15be12a849544fdbe0b03cd9eba8f1f~mv2.png"
+        alt="Prodigal Sun Radio — Where The Mix Never Sleeps!!"
+    >
+
+</a>
+```
 
 </body>
 </html>
